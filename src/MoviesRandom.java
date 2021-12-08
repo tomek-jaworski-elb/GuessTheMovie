@@ -1,21 +1,23 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MoviesRandom {
     private int linesCount = 0;
     private final String[] moviesAll = new String[100];
     private char[] MovieSelected;
+    private ArrayList<String> arrayListOfAllMovies;
 
     MoviesRandom() {
         try {
             File file = new File("movies.txt");
             Scanner scanner = new Scanner(file);
-
+            arrayListOfAllMovies = new ArrayList<>();
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
                 moviesAll[linesCount] = line;
-
+                arrayListOfAllMovies.add(line);
                 System.out.println("Number of lines: " + linesCount + ": " + line);
                 linesCount++;
 
@@ -30,7 +32,9 @@ public class MoviesRandom {
     public char[] getRandomMovie() {
         int movieIndex = (int) (Math.random() * linesCount - 1) + 1;
         System.out.println("The movie's title has been choosen");
-        char[] result = moviesAll[movieIndex].toCharArray();
+//        char[] result = moviesAll[movieIndex].toCharArray();
+        char[] result = arrayListOfAllMovies.get(movieIndex).toCharArray();
+
         MovieSelected = result.clone();
         return result;
     }
