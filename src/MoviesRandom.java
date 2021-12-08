@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class MoviesRandom {
     private int linesCount = 0;
-    private final String[] moviesAll = new String[100];
+//    private final String[] moviesAll = new String[100];
     private char[] MovieSelected;
     private ArrayList<String> arrayListOfAllMovies;
 
@@ -16,7 +16,7 @@ public class MoviesRandom {
             arrayListOfAllMovies = new ArrayList<>();
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
-                moviesAll[linesCount] = line;
+//                moviesAll[linesCount] = line;
                 arrayListOfAllMovies.add(line);
                 System.out.println("Number of lines: " + linesCount + ": " + line);
                 linesCount++;

@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Game {
@@ -7,6 +8,7 @@ public class Game {
     private char[] movie_;
     int wrongIndex = 0;
     char[] wrongChars = new char[20];
+    private ArrayList arrayListOfWrongChars = new ArrayList();
 
     Game(char[] movie, char[] movie_) {
 
@@ -25,11 +27,11 @@ public class Game {
                 }
             } else {
                 wrongChars[wrongIndex] = charSelected;
+                arrayListOfWrongChars.add(charSelected);
                 wrongIndex++;
             }
 
 //            System.out.println("Licznik: " + counter++);
-            System.out.println("Licznik: " + counter++);
             System.out.println(movie_);
             System.out.println("Złe litery:" + WrongLetters());
 
@@ -47,8 +49,13 @@ public class Game {
 
     private String WrongLetters() {
         String result = "";
-        for (int i = 0; i < wrongIndex; i++) {
-            result += String.valueOf(wrongChars[i]);
+//        for (int i = 0; i < wrongIndex; i++) {
+//            result += String.valueOf(wrongChars[i]);
+//            result += ", ";
+//        }
+
+        for (Object c : arrayListOfWrongChars) {
+            result += String.valueOf(c);
             result += ", ";
         }
         return result;
