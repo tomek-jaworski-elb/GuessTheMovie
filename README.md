@@ -10,6 +10,4 @@ BUT the more correct letters you guess the more obvious the movie becomes and at
 The program will randomly pick a movie title from a text file that contains a large list of movies.
 
 You can download a sample text file to play with from the resources tab or create your own list of movie titles.
-
 Once the computer picks a random title, it will display underscores "_" in place of the real letters, thereby only giving away the number of letters in the movie title.
------
